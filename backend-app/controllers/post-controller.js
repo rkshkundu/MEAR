@@ -55,7 +55,7 @@ const createPost = async (req, res, next) => {
     if(!errors.isEmpty()) {
        return next( apiError('Invalid/Empty field!', 422) ); //return error of empty field
     }
-
+   
     const {description, link, createdBy} = req.body;
     
     let user;
@@ -63,7 +63,7 @@ const createPost = async (req, res, next) => {
     try {
         user = await User.findById(createdBy);
     }catch (error) {
-        return next( apiError(`Error in saving new post ${error}`, 500) );
+        return next( apiError(`Error in saving new post ${error} abc`, 500) );
     }
     
     if(!user) {
@@ -90,7 +90,7 @@ const createPost = async (req, res, next) => {
         await user.save({session});
         await session.commitTransaction();
     } catch(error) {
-        return next( apiError(`Error in saving new post ${error}`, 500) ); //return error of empty field
+        return next( apiError(`Error in saving new post ${error} def`, 500) ); //return error of empty field
     }
     
 

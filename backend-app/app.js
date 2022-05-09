@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const connectionURL = 'mongodb+srv://test-user:lmbtS6lQeASqJxm7@cluster0.7aiko.gcp.mongodb.net/knowledgeSharingApp?retryWrites=true&w=majority';
+
+const connectionURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.7aiko.gcp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 const postList = require('./routes/post-routes');
 const userList = require('./routes/user-routes');

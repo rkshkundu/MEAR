@@ -3,7 +3,6 @@ const User = require('../models/user');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs'); //to covert password string into s hash encoded string
 const jwt = require('jsonwebtoken'); //to create a token once user logged in
-const TOKEN_SECRET_KEY = 'secRet_Key_noT_to_SaHre';
 
 const getUsers = async (req, res, next) => {
 	let users;
@@ -60,7 +59,7 @@ const signup = async (req, res, next) => {
 	try {
 		token = jwt.sign(
 			{ userdId: createdUser.id, email: createdUser.email },
-			TOKEN_SECRET_KEY,
+			process.env.TOKEN_SECRET_KEY,
 			{ expiresIn: '2h' }
 		);
 	} catch (error) {
@@ -115,7 +114,7 @@ const login = async (req, res, next) => {
 	try {
 		token = jwt.sign(
 			{ userdId: existingUser.id, email: existingUser.email },
-			TOKEN_SECRET_KEY,
+			process.env.TOKEN_SECRET_KEY,
 			{ expiresIn: '2h' }
 		);
 	} catch (error) {
