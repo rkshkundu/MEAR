@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background-image: url('../src/resources/images/14818514.jpg');
+  background-repeat: repeat;
+  background-color: #eee;
+}
+
+textarea, input, pre {
+  background: #f2f2f2;
+  border: 1px solid #000;
+  border-radius: none;
+}

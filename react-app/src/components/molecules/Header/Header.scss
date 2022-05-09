@@ -1,0 +1,42 @@
+header {
+    background-color: #000;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: block;
+        @media screen and (max-width: 767.5px) {
+            width: 70px;
+        }
+    }
+
+    .header-links, nav {
+        display: flex;
+        align-items: center;
+        
+        a {
+            line-height: 1;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+            color: #fff;
+            margin-right: 20px;
+            @media screen and (max-width: 767.5px) {
+                font-size: 16px;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+
+
+}
