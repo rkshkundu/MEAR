@@ -40,7 +40,7 @@ mongoose
     .connect(connectionURL)
     .then(() => {
         console.log('Connection done!!!');
-        app.listen(5000); //node server path
+        app.listen(process.env.PORT || 5000); //node server path
     })
     .catch(error => {
         console.log('Error in creattin connection with db', error);

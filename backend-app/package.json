@@ -4,7 +4,7 @@
   "description": "backend app using node and express",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Rakesh Kumar",
   "dependencies": {
